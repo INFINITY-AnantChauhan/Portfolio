@@ -5,6 +5,7 @@ AOS.init({
     once: true,
     mirror: false
 });
+
 // Particles.js configuration
 particlesJS('particles-js', {
     particles: {
@@ -108,18 +109,22 @@ particlesJS('particles-js', {
     },
     retina_detect: true
 });
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+
 hamburger?.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 });
+
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger?.classList.remove('active');
     navMenu?.classList.remove('active');
 }));
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -133,6 +138,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -142,6 +148,7 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     }
 });
+
 // Skill bars animation
 const animateSkillBars = () => {
     const skillBars = document.querySelectorAll('.skill-progress');
@@ -158,12 +165,15 @@ const animateSkillBars = () => {
     }, {
         threshold: 0.5
     });
+
     skillBars.forEach(bar => {
         observer.observe(bar);
     });
 };
+
 // Initialize skill bars animation
 animateSkillBars();
+
 // Lightbox functionality
 const certificateData = {
     cert1: {
@@ -197,6 +207,7 @@ const certificateData = {
         icon: 'fas fa-home'
     }
 };
+
 function openLightbox(certId) {
     const lightbox = document.getElementById('lightbox');
     const lightboxBody = document.getElementById('lightbox-body');
@@ -215,77 +226,99 @@ function openLightbox(certId) {
         document.body.style.overflow = 'hidden';
     }
 }
+
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     lightbox.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+
 // Close lightbox when clicking outside
 document.getElementById('lightbox')?.addEventListener('click', function(e) {
     if (e.target === this) {
         closeLightbox();
     }
 });
+
 // Close lightbox with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeLightbox();
     }
 });
-// Contact form handling
+
+// Contact form handling - Simplified version that always works
 const contactForm = document.getElementById('contactForm');
-contactForm?.addEventListener('submit', async function(e) {
+contactForm?.addEventListener('submit', function(e) {
     e.preventDefault();
     
     const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    const name = formData.get('name')?.trim();
+    const email = formData.get('email')?.trim();
+    const message = formData.get('message')?.trim();
     
     // Simple form validation
     if (!name || !email || !message) {
-        alert('Please fill in all fields.');
+        showFormMessage('Please fill in all fields.', 'error');
         return;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+        showFormMessage('Please enter a valid email address.', 'error');
         return;
     }
     
-    // Submit form to server
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    // Create email content
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Hi Anant,%0D%0A%0D%0AI contacted you through your portfolio website.%0D%0A%0D%0AName: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}%0D%0A%0D%0ABest regards,%0D%0A${name}`;
     
-    try {
-        const response = await fetch('/save-message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-        });
+    // Create mailto link
+    const mailtoLink = `mailto:anantchauhan2006@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    
+    // Show success message and redirect to email
+    showFormMessage('Opening your email client to send the message...', 'success');
+    
+    // Open email client
+    setTimeout(() => {
+        window.location.href = mailtoLink;
+        this.reset();
         
-        const result = await response.json();
-        
-        if (result.success) {
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        } else {
-            alert(result.message || 'Failed to send message. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error sending message:', error);
-        alert('Failed to send message. Please try again later.');
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
+        // Show additional instructions
+        setTimeout(() => {
+            showFormMessage('Email client opened! If it didn\'t open automatically, please email me directly at: anantchauhan2006@gmail.com', 'success');
+        }, 1000);
+    }, 1500);
 });
+
+// Function to show form messages
+function showFormMessage(message, type) {
+    // Remove any existing message
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create new message element
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message ${type}`;
+    messageElement.textContent = message;
+    
+    // Insert message after the form
+    const form = document.getElementById('contactForm');
+    form.parentNode.insertBefore(messageElement, form.nextSibling);
+    
+    // Auto-remove success messages after 5 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            if (messageElement.parentNode) {
+                messageElement.remove();
+            }
+        }, 5000);
+    }
+}
+
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
@@ -301,6 +334,7 @@ function typeWriter(element, text, speed = 100) {
     
     type();
 }
+
 // Initialize typing animation when page loads
 window.addEventListener('load', () => {
     const heroTitle = document.querySelector('.hero-title');
@@ -311,6 +345,7 @@ window.addEventListener('load', () => {
         }, 1000);
     }
 });
+
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -320,10 +355,12 @@ window.addEventListener('scroll', () => {
         heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
 });
+
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+
 // Intersection Observer for project cards animation
 const observeProjects = () => {
     const projectCards = document.querySelectorAll('.project-card');
@@ -338,6 +375,7 @@ const observeProjects = () => {
     }, {
         threshold: 0.1
     });
+
     projectCards.forEach(card => {
         card.style.transform = 'translateY(50px)';
         card.style.opacity = '0';
@@ -345,8 +383,10 @@ const observeProjects = () => {
         observer.observe(card);
     });
 };
+
 // Initialize project cards animation
 observeProjects();
+
 // Add glitch effect to hero name on hover
 const heroName = document.querySelector('.hero-name');
 if (heroName) {
@@ -358,6 +398,7 @@ if (heroName) {
         heroName.style.animation = 'glow 2s ease-in-out infinite alternate';
     });
 }
+
 // Add CSS for glitch effect
 const style = document.createElement('style');
 style.textContent = `
@@ -380,12 +421,14 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
 // Console message for developers
 console.log(`
 🚀 Portfolio Website - Anant Chauhan
 💻 Built with HTML, CSS, and JavaScript
 🎨 Design: Dark theme with neon accents
 ✨ Features: Particle animations, smooth scrolling, responsive design
+
 Connect with me:
 📧 anantchauhan2006@gmail.com
 💼 https://linkedin.com/in/anant-chauhan-243550306
