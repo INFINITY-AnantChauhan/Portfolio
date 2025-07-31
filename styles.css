@@ -562,6 +562,45 @@ section {
     border: 1px solid #333333;
 }
 
+.form-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+.form-message.success {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: #00d4ff;
+}
+
+.form-message.error {
+    background: rgba(255, 82, 82, 0.1);
+    border: 1px solid #ff5252;
+    color: #ff5252;
+}
+
+.form-note {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #888888;
+    text-align: center;
+    font-style: italic;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -786,4 +825,8 @@ section {
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #00d4ff, #8a2be2);
     border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #8a2be2, #00d4ff);
 }
