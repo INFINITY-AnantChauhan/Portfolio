@@ -134,7 +134,7 @@ app.post('/save-message', (req, res) => {
         });
     } catch (error) {
         console.error('Error saving message:', error);
-        console.error('Error stack:', error);
+        console.error('Error stack:', error.stack);
         res.status(500).json({ 
             success: false, 
             message: 'Failed to save message. Please try again later.' 
