@@ -1,0 +1,131 @@
+{
+  "person": {
+    "name": "Anant Chauhan",
+    "headline": "AI/ML Engineer in Training | Student Lead, Smart India Hackathon 2026 | Design Lead, UPES OPEN Community",
+    "intro": "Third-year B.Tech CSE (AI & ML) student at UPES, Dehradun. I build machine-learning and web projects, and I design for the communities I help run.",
+    "email": "anantchauhan2006@gmail.com",
+    "linkedin": "https://linkedin.com/in/anant-chauhan-243550306",
+    "github": "https://github.com/INFINITY-AnantChauhan"
+  },
+  "highlights": [
+    { "label": "Now", "text": "Design Lead, UPES OPEN Community" },
+    { "label": "Now", "text": "Student Lead, Smart India Hackathon 2026" },
+    { "label": "Trained", "text": "IIRS–ISRO Summer School" },
+    { "label": "Ambassador", "text": "Google Gemini Ambassador at UPES" },
+    { "label": "Previously", "text": "Intern, UPCL and NextJob.ai" }
+  ],
+  "about": [
+    "I'm a third-year B.Tech Computer Science and Engineering student at UPES, Dehradun, specialising in AI and Machine Learning. My interests run through computer vision, CNNs and NLP, and just as much through backend engineering and data structures and algorithms.",
+    "I interned at Uttarakhand Power Corporation Limited (UPCL) in an IT/SCADA environment, working on web and backend development and SCADA dashboard-related functionality. I have also interned with NextJob.ai.",
+    "Design is the other half of how I work. I lead design for the UPES OPEN Community, and I have held editorial, VFX and design roles across Hypervision, ACM and IEEE CS. This year I am also a student lead for Smart India Hackathon 2026 at UPES."
+  ],
+  "facts": [
+    ["Studying", "B.Tech CSE (AI & ML), year 3"],
+    ["University", "UPES, Dehradun"],
+    ["Training", "IIRS–ISRO Summer School, 2023"],
+    ["Focus", "ML, computer vision, backend"]
+  ],
+  "skills": [
+    { "group": "Programming", "items": ["Python", "C", "C++", "SQL"] },
+    { "group": "AI and machine learning", "items": ["Machine learning", "Computer vision", "CNNs", "NLP"] },
+    { "group": "Web and software", "items": ["HTML", "CSS", "JavaScript", "React.js", "Node.js / Express", "MySQL", "Backend development"] },
+    { "group": "Developer tools", "items": ["Git", "GitHub"] },
+    { "group": "Creative", "items": ["UI/UX", "Graphic design", "Canva", "Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"] }
+  ],
+  "projects": [
+    {
+      "id": "mnist-cnn", "title": "Handwritten Digit Recognition", "category": "AI / ML",
+      "status": null,
+      "overview": "Recognising handwritten digits from the MNIST dataset with a Convolutional Neural Network.",
+      "problem": null, "approach": null, "contribution": null,
+      "tech": ["Python", "CNN", "MNIST"],
+      "image": "digit.png", "github": "https://github.com/INFINITY-AnantChauhan/Digit-Recognizer-project", "live": null
+    },
+    {
+      "id": "medikiosk", "title": "MediKiosk", "category": "AI / ML · Concept",
+      "status": "Proposed concept for Smart India Hackathon problem statement SIH26047 (Team Azure). Implementation status to be confirmed.",
+      "overview": "A patient case-taking system concept exploring multilingual AI-assisted voice interviews, OCR, ABHA/ABDM-related workflows, FHIR, and clinical red-flag and drug-interaction checks.",
+      "problem": null, "approach": null, "contribution": null,
+      "tech": ["Voice AI", "OCR", "FHIR", "ABDM"],
+      "image": "Medi.png", "github": "https://github.com/StillGrowing-25/Medikiosk", "live": null
+    },
+    {
+      "id": "traffic", "title": "Smart Traffic Management System", "category": "Software · Data",
+      "status": null,
+      "overview": "A Python and Folium project that visualises traffic density in Indian cities to support better traffic flow, with data processing and interactive mapping.",
+      "problem": null, "approach": null, "contribution": null,
+      "tech": ["Python", "Folium", "Data analysis"],
+      "image": "Traffic.png", "github": "https://github.com/INFINITY-AnantChauhan/Traffic-Management-System", "live": null
+    },
+    {
+      "id": "university-ranking", "title": "University Ranking System", "category": "Software · Data",
+      "status": null,
+      "overview": "A system for ranking universities. Its data inputs and ranking method will be documented here.",
+      "problem": null, "approach": null, "contribution": null,
+      "tech": [], "image": "University.png", "github": "https://github.com/INFINITY-AnantChauhan/University-Ranking-System", "live": null
+    },
+    {
+      "id": "design-portfolio", "title": "Design Portfolio", "category": "Creative design",
+      "status": null,
+      "overview": "A collection of my graphic design, UI/UX and motion work, kept separate from this developer portfolio.",
+      "problem": null, "approach": null, "contribution": null,
+      "tech": ["Photoshop", "Illustrator", "After Effects", "Canva"],
+      "image": "Design.png", "github": "https://github.com/INFINITY-AnantChauhan/Design-Portfolio", "live": null
+    }
+  ],
+  "certificates": [
+    {
+      "id": "deloitte-data-analyst", "title": "Data Analyst Job Simulation", "issuer": "Deloitte", "date": "1st October 2026",
+      "description": "A virtual job simulation, not employment, built around business-style data analysis tasks, focused on deriving insights and communicating recommendations from data.",
+      "image": "Deloitte.jpeg", "url": null
+    },
+    {
+      "id": "azure-devops", "title": "Introduction to DevOps with Microsoft Azure", "issuer": "Microsoft Learn", "date": "23 March 2025",
+      "description": "An introductory course on DevOps concepts using Microsoft Azure. This is a course completion certificate, not a professional certification.",
+      "image": "Microsoft.jpeg", "url": null
+    },
+    {
+      "id": "iirs-isro", "title": "IIRS–ISRO Summer School", "issuer": "IIRS, ISRO", "date": "June 2023",
+      "description": "Training on Remote Sensing and Geographic Information Systems applications, covering satellite data analysis and spatial data processing.",
+      "image": "ISRO.jpeg", "url": null
+    },
+    {
+      "id": "thomso-2024", "title": "Thomso 2024 AI/ML Workshop", "issuer": "IIT Roorkee", "date": "2024",
+      "description": "Participation in an AI and Machine Learning workshop at IIT Roorkee covering data science techniques and neural networks.",
+      "image": "IITR.jpeg", "url": null
+    },
+    {
+      "id": "srijan", "title": "Srijan Social Internship, Lead Changemaker", "issuer": "Srijan", "date": "1 August 2025",
+      "description": "Led social impact and community development initiatives during the internship.",
+      "image": "Srijan.jpeg", "url": null
+    },
+    {
+      "id": "sih-oc-member", "title": "Best Student Organising Committee Member of Smart India Hackathon 2026 – UPES", "issuer": "UPES", "date": "17 September 2026",
+      "description": "Recognized as the Best Student Organising Committee Member for Smart India Hackathon 2026 at UPES.",
+      "image": "OC.png", "url": null
+    },
+    {
+      "id": "sih-oc-lead", "title": "Best Student Organising Committee Lead for Smart India Hackathon 2026 – UPES", "issuer": "UPES", "date": "17 September 2026",
+      "description": "Recognized as the Best Student Organising Committee Lead for Smart India Hackathon 2026 at UPES.",
+      "image": "LEAD.png", "url": null
+    }
+  ],
+  "roles": {
+    "now": [
+      { "role": "Design Lead", "org": "UPES OPEN Community", "note": "Design direction for the community." },
+      { "role": "Student Lead", "org": "Smart India Hackathon 2026, UPES", "note": "Student organising leadership. Exact title to be confirmed." },
+      { "role": "Google Gemini Ambassador", "org": "UPES", "note": null },
+      { "role": "Lead Enabler", "org": "UPES", "note": null },
+      { "role": "Organizing Committee Member", "org": "Udbhav 2025", "note": null }
+    ],
+    "earlier": [
+      { "role": "Editorial Co-Head", "org": "Hypervision", "note": "Editorial initiatives and content for the university platform." },
+      { "role": "Technical Design and VFX", "org": "ACM", "note": "Technical projects, design and visual effects for chapter events." },
+      { "role": "Design and Technical Co-Head", "org": "IEEE CS", "note": "Design and technical work on chapter projects and events." },
+      { "role": "Editorial Head and CS Club Head", "org": "Olympus", "note": "Led the editorial team and computer science club." },
+      { "role": "Lead Changemaker", "org": "Antarman Parivar Society", "note": "Community outreach: outreach design, teaching children, plantation drives." },
+      { "role": "Intern", "org": "Uttarakhand Power Corporation Limited", "note": "IT/SCADA environment, web and backend development." },
+      { "role": "Intern", "org": "NextJob.ai", "note": null }
+    ]
+  }
+}
